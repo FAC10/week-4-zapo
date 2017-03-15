@@ -10,4 +10,4 @@ const server = http.createServer(router);
 
 server.listen(port);
 
-console.log('server running on: http://' + host + ':' + port);
+console.log(`server running on: http://${host}:${port}`);

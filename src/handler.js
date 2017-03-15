@@ -35,3 +35,10 @@ handlers.pageNotFound = function (request, response) {
   response.write('<h1>404 Page Requested Cannot be Found</h1>');
   response.end();
 };
+
+
+handlers.serveAPI = function (response, api) {
+  response.writeHead(200, { 'content-type': 'application/json' });
+  response.end(JSON.stringify(api));
+};
+
