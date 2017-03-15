@@ -11,12 +11,57 @@ body {
   text-align: center;
 }
 
+#inputs {
+  margin-top: 3.5rem;
+}
+
 input {
-  display: block;
+    display: inline-block;
+    margin: 1rem;
+    padding: 1rem;
+    padding-right: 8rem;
+    font-size: 1rem;
+}
+
+input:focus {
+  outline:3px solid #5dbcff;
 }
 
 .flex {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+label {
+    min-width: 70px;
+    display: inline-block;
+}
+
+#button {
+  width: 100%;
+}
+
+button {
+    padding: 1rem;
+    background-color: #ff3543;
+    color: #fffae3;
+    border: 1px solid #fffae3;
+    font-size: 1rem;
+    margin: 0 auto;
+    display: block;
+    margin-top: 2rem;
+}
+
+button:hover {
+  background-color: #fffae3;
+  color: #ff3543;
+}
+
+@media screen and (max-width: 800px) {
+
+.input {
+  display: block;
+}
+
 }
