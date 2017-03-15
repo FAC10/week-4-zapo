@@ -1,7 +1,22 @@
 body {
-  background-color: green;
+  background-color: #ff3543;
+  color: #fffae3;
+  font-family: Lato;
 }
 
-p {
-  font-size: 50px;
+#title {
+  font-family: Fjalla One;
+  font-size: 3rem;
+  letter-spacing: 0.8rem;
+  text-align: center;
+}
+
+input {
+  display: block;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
