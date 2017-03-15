@@ -23,7 +23,9 @@
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-plugin-import": "^2.2.0",
     "faucet": "0.0.1",
-    "nodemon": "^1.11.0",
     "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "nodemon": "^1.11.0"
   }
 }
