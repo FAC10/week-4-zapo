@@ -1,8 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-
+const handleAPI = require('./handleAPI');
 
 const handlers = module.exports = {};
+
+
+handlers.handleAPI = handleAPI;
 
 handlers.serveLanding = function (request, response) {
   fs.readFile(path.join(__dirname, '..', 'public', 'index.html'), (err, file) => {
@@ -31,9 +34,4 @@ handlers.pageNotFound = function (request, response) {
   response.writeHead(404, { 'content-type': 'text/html' });
   response.write('<h1>404 Page Requested Cannot be Found</h1>');
   response.end();
-};
-
-handlers.serveAPI = function (response, api) {
-  response.writeHead(200, { 'content-type': 'application/json' });
-  response.end(JSON.stringify(api));
 };

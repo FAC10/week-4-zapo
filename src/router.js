@@ -10,7 +10,7 @@ module.exports = function router(request, response) {
   } else if (extension === 'css' || extension === 'js' || extension === 'html' || extension === 'ico') {
     handlers.servePublic(request, response);
   } else if (url === '/api/words') {
-    handlers.serveAPI(response, { id: '4', words: ['aardvark', 'abacus', 'Aberdeen', 'Aldine'] });
+    handlers.handleAPI(response, { id: '4', words: ['aardvark', 'abacus', 'Aberdeen', 'Aldine'] });
   } else {
     handlers.pageNotFound(request, response);
   }
