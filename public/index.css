@@ -51,7 +51,6 @@ input:focus {
 
 label {
   min-width: 70px;
-  /*display: inline-block;*/
   flex: 1 0 33%;
   display: flex;
   -ms-align-items: center;
@@ -65,13 +64,16 @@ label {
 
 button {
   padding: 1rem;
-  background-color: #ff3543;
+  background-color: #f02e3b;
   color: #fffae3;
   border: 1px solid #fffae3;
   margin: 0 auto;
   display: block;
   margin-top: 2rem;
   display: inline-block;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 button:hover {
@@ -106,6 +108,5 @@ button:hover {
   }
   .input {
     display: block;
-    /*flex: 0 0 100%;*/
   }
 }
