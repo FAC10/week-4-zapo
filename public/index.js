@@ -26,7 +26,6 @@ function showSuggestions(err, data) {
   data.words.slice(0, 10).forEach(function(word) {
     var option = document.createElement('option');
     option.value = word;
-    console.log(option);
     datalist.appendChild(option);
   })
 }
@@ -53,4 +52,31 @@ function fetch(method, url, handleResponseCallback) {
   };
   xhr.open(method, url, true);
   xhr.send();
+}
+
+// Building story
+
+var form = document.getElementById('form');
+form.addEventListener('submit', handleSubmit);
+  var arr = [];
+function handleSubmit(event) {
+  event.preventDefault();
+  Object.keys(event.target).forEach(function(key) {
+    arr.push(event.target[key].value);
+  })
+  form.style = 'display:none';
+  buildStory(arr);
+}
+
+function buildStory(words) {
+  var story = 'Today I am ' + words[0] + ' and would ' + words[1]+ ' like to ' + words[2]+ ' a ' + words[3] + ' ' + words[4] + '. Hopefully my ' + words[5] + ' who is being a bit of a ' + words[6] + ' will stop trying to ' + words[7] + ' me. Normally when I’m ' + words[8] + ' , I like to ' + words[9] + ' myself ' + words[10] + ' until I feel ' + words[11] + ' again. Thank god I have a ' + words[12] + ' to help me ' + words[13] + ' ' + words[14] + '.'
+  resultsOnDOM(story);
+}
+
+function resultsOnDOM(toAdd) {
+var paragraph = document.createElement('p');
+paragraph.textContent = toAdd;
+paragraph.className = 'result';
+var app = document.getElementById('app');
+app.appendChild(paragraph);
 }

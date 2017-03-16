@@ -16,7 +16,7 @@ body {
   text-align: center;
 }
 
-#inputs {
+#app {
   margin-top: 3.5rem;
 }
 
@@ -79,11 +79,12 @@ button:hover {
   text-align: right;
 }
 
-/*@media screen and (max-width: 950px) {
-  .input {
-    flex-basis: 50%;
-  }
-}*/
+.result {
+    font-size: 1.8rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    margin-top: 7rem;
+}
 
 @media screen and (max-width: 1200px) {
   .flex {
