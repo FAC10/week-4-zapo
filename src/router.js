@@ -30,12 +30,19 @@ module.exports = function (request, response) {
       dataHolder[keyValue[0]] = keyValue[1];
     });
 
-    // { type: 'noun', id: '0', query: 'abc' }
+    // const dataHolder = { type: 'noun', id: '0', query: 'aus' };
     const queryLetter = dataHolder.query[0];
-    const letterArr = jsonHolder[dataHolder.type][queryLetter];
+    let letterArr = jsonHolder[dataHolder.type][queryLetter.toLowerCase()];
 
+    letterArr = letterArr.filter((value) => {
+      const noCase = value.toLowerCase();
+      return noCase.startsWith(dataHolder.query.toLowerCase());
+    });
+    const APIResponse = {};
+    APIResponse.id = dataHolder.id;
+    APIResponse.words = letterArr.slice(0, 10);
 
-    handlers.handleAPI(response, { id: '4', words: ['aardvark', 'abacus', 'Aberdeen', 'Aldine'] });
+    handlers.handleAPI(response, letterArr);
   } else {
     handlers.pageNotFound(request, response);
   }
