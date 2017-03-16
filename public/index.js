@@ -6,9 +6,10 @@ var inputs = document.querySelectorAll('input');
 
 // foreach - fetch api
 
-inputs.forEach (function(e) {
-  e.addEventListener('keyup', function() {
-    var url = makeUrl(e.name, e.id, e.value);
+inputs.forEach (function(input) {
+  input.addEventListener('keyup', function() {
+    if (input.value === '') return;
+    var url = makeUrl(input.name, input.id, input.value);
     fetch('GET', url, showSuggestions);
   })
 })
@@ -20,12 +21,13 @@ function showSuggestions(err, data) {
     console.log(err);
     return;
   }
-  data.words.forEach(function(e) {
-    console.log('working');
-    // var option = document.createElement('option');
-    // console.log(option);
-    // option.value = e;
-    document.getElementById('suggested-' + data.id).innerHTML+='<option value="' + e + '"/>';
+  var datalist = document.getElementById('suggested-' + data.id);
+  datalist.innerHTML = '';
+  data.words.slice(0, 10).forEach(function(word) {
+    var option = document.createElement('option');
+    option.value = word;
+    console.log(option);
+    datalist.appendChild(option);
   })
 }
 
@@ -33,7 +35,7 @@ function showSuggestions(err, data) {
 
 function makeUrl(type, id, query) {
   return 'https://warm-bayou-62114.herokuapp.com/api/words';
-  // return 'harokuthing/api/words/?type=' + type + '&id=' + id + '&query=' + query;
+  // return 'https://warm-bayou-62114.herokuapp.com/api/words?type=' + type + '&id=' + id + '&query=' + query;
 }
 
 // fetch request
