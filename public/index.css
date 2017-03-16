@@ -40,12 +40,12 @@ input:focus {
 }
 
 label {
-    min-width: 70px;
-    /*display: inline-block;*/
-    flex: 1 0 33%;
-    display: flex;
-    -ms-align-items: center;
-    align-items: center;
+  margin-right: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  -ms-align-items: center;
+  align-items: center;
+  flex: 0 0 4.5rem;
 }
 
 #button {
@@ -76,11 +76,6 @@ button:hover {
   flex: 0 0 33%;
 }
 
-.input > label {
-  flex: 0 0 6em;
-  text-align: right;
-}
-
 .result {
     font-size: 1.8rem;
     max-width: 50rem;
@@ -94,6 +89,9 @@ button:hover {
     display: block;
     margin: 0 auto;
     max-width: 30rem;
+  }
+  label {
+    display: block;
   }
   .input {
     display: block;
