@@ -1,11 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const handleAPI = require('./handleAPI');
 
 const handlers = module.exports = {};
-
-
-handlers.handleAPI = handleAPI;
 
 handlers.serveLanding = function (request, response) {
   fs.readFile(path.join(__dirname, '..', 'public', 'index.html'), (err, file) => {
@@ -38,7 +34,6 @@ handlers.pageNotFound = function (request, response) {
 
 
 handlers.serveAPI = function (response, api) {
-  response.writeHead(200, { 'content-type': 'application/json' });
+  response.writeHead(200, { 'content-type': 'application/json', 'access-control-allow-origin': '*' });
   response.end(JSON.stringify(api));
 };
-

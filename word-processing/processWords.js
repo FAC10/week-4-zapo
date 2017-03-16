@@ -40,4 +40,4 @@ function getFile(filename) {
   });
 }
 
-getFile('verbs.txt');
+getFile(process.argv[2]);
