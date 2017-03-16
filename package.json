@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "tape tests/*.js | faucet",
+    "test": "tape tests/handleAPI.test.js | faucet",
     "serve": "browser-sync start -s --https --ss public -f 'public/*'",
     "start": "nodemon src/server.js"
   },

@@ -16,7 +16,6 @@ const jsonHolder = {
 
 
 test('handleAPI control test', (t) => {
-  t.plan(1);
   const query = 'a';
   const url = `/api/words?type=noun&id=0&query=${query}`;
   const expected = {
@@ -25,10 +24,10 @@ test('handleAPI control test', (t) => {
   };
   const actual = handleAPI(url);
   t.deepEqual(expected, actual, 'return value of handleAPI should be same as expected when passed a valid input');
+  t.end();
 });
 
-test('handleAPI test', (t) => {
-  t.plan(1);
+test('handleAPI test with single number', (t) => {
   const query = '0';
   const url = `/api/words?type=noun&id=0&query=${query}`;
   const expected = {
@@ -37,4 +36,41 @@ test('handleAPI test', (t) => {
   };
   const actual = handleAPI(url);
   t.deepEqual(expected, actual, 'return value of handleAPI should be a warning if given invalid input');
+  t.end();
+});
+
+test('handleAPI test with single dash', (t) => {
+  const query = '-';
+  const url = `/api/words?type=noun&id=0&query=${query}`;
+  const expected = {
+    id: '0',
+    words: ['Please only enter alphabetical characters'],
+  };
+  const actual = handleAPI(url);
+  t.deepEqual(expected, actual, 'return value of handleAPI should be a warning if given invalid input');
+  t.end();
+});
+
+test('handleAPI test with string of invalid characters', (t) => {
+  const query = '12345-+={}()';
+  const url = `/api/words?type=noun&id=0&query=${query}`;
+  const expected = {
+    id: '0',
+    words: ['Please only enter alphabetical characters'],
+  };
+  const actual = handleAPI(url);
+  t.deepEqual(expected, actual, 'return value of handleAPI should be a warning if given invalid input');
+  t.end();
+});
+
+test('handleAPI test with string with square brackets', (t) => {
+  const query = '[';
+  const url = `/api/words?type=noun&id=0&query=${query}`;
+  const expected = {
+    id: '0',
+    words: ['Please only enter alphabetical characters'],
+  };
+  const actual = handleAPI(url);
+  t.deepEqual(expected, actual, 'return value of handleAPI should be a warning if given invalid input');
+  t.end();
 });
