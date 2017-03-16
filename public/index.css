@@ -3,6 +3,14 @@
   box-sizing: border-box;
 }
 
+input,
+label,
+button {
+  font-size: inherit;
+  color: inherit;
+  border: none;
+}
+
 body {
   background-color: #ff3543;
   color: #fffae3;
@@ -29,7 +37,6 @@ input {
     margin: 1rem 0;
     padding: 1rem;
     /*padding-right: 8rem;*/
-    font-size: 1rem;
     flex: 1;
 }
 
@@ -41,6 +48,7 @@ input:focus {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  font-size: 1.125rem;
 }
 
 label {
@@ -62,7 +70,6 @@ button {
     background-color: #ff3543;
     color: #fffae3;
     border: 1px solid #fffae3;
-    font-size: 1rem;
     margin: 0 auto;
     display: block;
     margin-top: 2rem;
