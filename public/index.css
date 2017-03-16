@@ -10,7 +10,9 @@ body {
 }
 
 #title {
-  font-family: Fjalla One;
+  margin: 0;
+  margin-top: 3.5rem;
+  font-family: 'Fjalla One', Helvetica, Arial, sans-serif;
   font-size: 3rem;
   letter-spacing: 0.8rem;
   text-align: center;
