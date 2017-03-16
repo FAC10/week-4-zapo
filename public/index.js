@@ -8,8 +8,9 @@ var inputs = document.querySelectorAll('input');
 
 inputs.forEach (function(input) {
   input.addEventListener('keyup', function() {
-    if (input.value === '') return;
-    var url = makeUrl(input.name, input.id, input.value);
+    var value = input.value.replace(/[^A-z]/gi, '');
+    if (value === '') return;
+    var url = makeUrl(input.name, input.id, value);
     fetch('GET', url, showSuggestions);
   })
 })
