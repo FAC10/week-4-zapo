@@ -21,7 +21,7 @@ function handleAPI(url) {
     dataHolder[keyValue[0]] = keyValue[1];
   });
 
-  dataHolder.query = dataHolder.query.replace(/[^A-z]/gi, '');
+  dataHolder.query = dataHolder.query.replace(/[^A-z]|\[|\]/gi, '');
 
   if (dataHolder.query.length === 0) {
     return {
