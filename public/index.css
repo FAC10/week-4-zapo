@@ -10,7 +10,7 @@ input, label, button {
 }
 
 body {
-  background-color: #ff3543;
+  background-color: #f02e3b;
   color: #fffae3;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
 }
@@ -76,7 +76,7 @@ button {
 
 button:hover {
   background-color: #fffae3;
-  color: #ff3543;
+  color: #f02e3b;
 }
 
 .input {
