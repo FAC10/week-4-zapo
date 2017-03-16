@@ -1,6 +1,17 @@
 // const fs = require('fs');
 // const path = require('path');
 const handlers = require('./handler');
+const noun = require('./words/nouns.json');
+const verb = require('./words/verbs.json');
+const adjective = require('./words/adjectives.json');
+const adverb = require('./words/adverbs.json');
+
+const jsonHolder = {
+  noun,
+  verb,
+  adjective,
+  adverb,
+};
 
 module.exports = function (request, response) {
   const url = request.url;
@@ -10,19 +21,19 @@ module.exports = function (request, response) {
   } else if (extension === 'css' || extension === 'js' || extension === 'html' || extension === 'ico') {
     handlers.servePublic(request, response);
   } else if (url.indexOf('/api/words') !== -1) {
-    url = url.replace('/api/words/?', '').split('&');
+    const splitUrl = url.replace('/api/words/?', '').split('&');
 
     const dataHolder = {};
 
-    myUrl = myUrl.forEach((e) => {
+    splitUrl.forEach((e) => {
       const keyValue = e.split('=');
-      dataHolder[a[0]] = a[1];
+      dataHolder[keyValue[0]] = keyValue[1];
     });
 
+    // { type: 'noun', id: '0', query: 'abc' }
+    const queryLetter = dataHolder.query[0];
+    const letterArr = jsonHolder[dataHolder.type][queryLetter];
 
-    console.log(obj);
-
-    console.log(url);
 
     handlers.handleAPI(response, { id: '4', words: ['aardvark', 'abacus', 'Aberdeen', 'Aldine'] });
   } else {
