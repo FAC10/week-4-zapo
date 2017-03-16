@@ -33,8 +33,7 @@ function showSuggestions(err, data) {
 // contruct url
 
 function makeUrl(type, id, query) {
-  return 'https://warm-bayou-62114.herokuapp.com/api/words';
-  // return 'https://warm-bayou-62114.herokuapp.com/api/words?type=' + type + '&id=' + id + '&query=' + query;
+  return 'https://warm-bayou-62114.herokuapp.com/api/words?type=' + type + '&id=' + id + '&query=' + query;
 }
 
 // fetch request
