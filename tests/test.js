@@ -12,6 +12,10 @@ QUnit.module('See if function makeUrl works', (asserts) => {
   QUnit.test('return the correct url', (asserts) => {
     asserts.equal(makeUrl('verb', '12', 'australia'), 'https://warm-bayou-62114.herokuapp.com/api/words?type=verb&id=12&query=australia', 'this creates the correct url');
   });
+
+  QUnit.test('return the correct url', (asserts) => {
+    asserts.equal(makeUrl('adjective', '9', 'cat'), 'https://warm-bayou-62114.herokuapp.com/api/words?type=adjective&id=9&query=cat', 'this creates the correct url');
+  });
 });
 
 QUnit.module('Check if buildStory function is working', (asserts) => {
@@ -22,5 +26,10 @@ QUnit.module('Check if buildStory function is working', (asserts) => {
   QUnit.test('Check if buildStory function is working', (asserts) => {
     asserts.equal(buildStory(['computer', 'cat', 'radio', 'rainbow', 'laces', 'hero', 'knife', 'cave', 'boulder', 'make', 'her', 'up', 'pink', 'table', 'goat'], null),
     'Today I am computer and would cat like to radio a rainbow laces. Hopefully my hero who is being a bit of a knife will stop trying to cave me. Normally when I’m boulder, I like to make myself her until I feel up again. Thank god I have a pink to help me table goat.');
+  });
+
+  QUnit.test('Check if buildStory function is working', (asserts) => {
+    asserts.equal(buildStory(['one', 'day', 'I', 'went', 'sword', 'mace', 'orc', 'boots', 'buckle', 'teeth', 'wisdom', 'museum', 'art', 'frame', 'crime'], null),
+    'Today I am one and would day like to I a went sword. Hopefully my mace who is being a bit of a orc will stop trying to boots me. Normally when I’m buckle, I like to teeth myself wisdom until I feel museum again. Thank god I have a art to help me frame crime.');
   });
 });
