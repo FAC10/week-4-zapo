@@ -74,8 +74,19 @@ function buildStory(words) {
 
 function resultsOnDOM(toAdd) {
 var paragraph = document.createElement('p');
+var div = document.createElement('div');
 paragraph.textContent = toAdd;
 paragraph.className = 'result';
+div.id = 'button';
 var app = document.getElementById('app');
 app.appendChild(paragraph);
+app.appendChild(div);
+div.appendChild(reset);
 }
+
+// reset
+
+var reset = document.getElementById('reset');
+reset.addEventListener('click', function() {
+  location.reload();
+})
