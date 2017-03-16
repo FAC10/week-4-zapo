@@ -1,4 +1,4 @@
-/*eslint-disable*/
+  /*eslint-disable*/
 
 // fetch on keyup
 
@@ -30,7 +30,7 @@ function showSuggestions(err, data) {
   })
 }
 
-// contruct url
+// construct url
 
 function makeUrl(type, id, query) {
   return 'https://warm-bayou-62114.herokuapp.com/api/words?type=' + type + '&id=' + id + '&query=' + query;
@@ -64,12 +64,15 @@ function handleSubmit(event) {
     arr.push(event.target[key].value);
   })
   form.style = 'display:none';
-  buildStory(arr);
+  buildStory(arr, resultsOnDOM);
 }
 
-function buildStory(words) {
-  var story = 'Today I am ' + words[0] + ' and would ' + words[1]+ ' like to ' + words[2]+ ' a ' + words[3] + ' ' + words[4] + '. Hopefully my ' + words[5] + ' who is being a bit of a ' + words[6] + ' will stop trying to ' + words[7] + ' me. Normally when I’m ' + words[8] + ' , I like to ' + words[9] + ' myself ' + words[10] + ' until I feel ' + words[11] + ' again. Thank god I have a ' + words[12] + ' to help me ' + words[13] + ' ' + words[14] + '.'
-  resultsOnDOM(story);
+function buildStory(words, cb) {
+  var story = 'Today I am ' + words[0] + ' and would ' + words[1]+ ' like to ' + words[2]+ ' a ' + words[3] + ' ' + words[4] + '. Hopefully my ' + words[5] + ' who is being a bit of a ' + words[6] + ' will stop trying to ' + words[7] + ' me. Normally when I’m ' + words[8] + ', I like to ' + words[9] + ' myself ' + words[10] + ' until I feel ' + words[11] + ' again. Thank god I have a ' + words[12] + ' to help me ' + words[13] + ' ' + words[14] + '.';
+  if (cb) {
+  cb(story);
+}
+  return story;
 }
 
 function resultsOnDOM(toAdd) {
