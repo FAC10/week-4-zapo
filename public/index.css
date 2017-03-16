@@ -3,9 +3,7 @@
   box-sizing: border-box;
 }
 
-input,
-label,
-button {
+input, label, button {
   font-size: inherit;
   color: inherit;
   border: none;
@@ -33,15 +31,15 @@ body {
 }
 
 input {
-    width: 100%;
-    margin: 1rem 0;
-    padding: 1rem;
-    /*padding-right: 8rem;*/
-    flex: 1;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 1rem;
+  /*padding-right: 8rem;*/
+  flex: 1;
 }
 
 input:focus {
-  outline:3px solid #5dbcff;
+  outline: 3px solid #5dbcff;
 }
 
 .flex {
@@ -52,12 +50,12 @@ input:focus {
 }
 
 label {
-    min-width: 70px;
-    /*display: inline-block;*/
-    flex: 1 0 33%;
-    display: flex;
-    -ms-align-items: center;
-    align-items: center;
+  min-width: 70px;
+  /*display: inline-block;*/
+  flex: 1 0 33%;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
 }
 
 #button {
@@ -66,14 +64,14 @@ label {
 }
 
 button {
-    padding: 1rem;
-    background-color: #ff3543;
-    color: #fffae3;
-    border: 1px solid #fffae3;
-    margin: 0 auto;
-    display: block;
-    margin-top: 2rem;
-    display: inline-block;
+  padding: 1rem;
+  background-color: #ff3543;
+  color: #fffae3;
+  border: 1px solid #fffae3;
+  margin: 0 auto;
+  display: block;
+  margin-top: 2rem;
+  display: inline-block;
 }
 
 button:hover {
@@ -87,17 +85,17 @@ button:hover {
   flex: 0 0 33%;
 }
 
-.input > label {
+.input>label {
   flex: 0 0 6em;
   text-align: right;
 }
 
 .result {
-    font-size: 1.8rem;
-    max-width: 50rem;
-    margin: 0 auto;
-    margin-top: 7rem;
-    margin-bottom: 4rem;
+  font-size: 1.8rem;
+  max-width: 50rem;
+  margin: 0 auto;
+  margin-top: 7rem;
+  margin-bottom: 4rem;
 }
 
 @media screen and (max-width: 1200px) {
