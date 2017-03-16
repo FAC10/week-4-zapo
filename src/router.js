@@ -21,7 +21,7 @@ module.exports = function (request, response) {
   } else if (extension === 'css' || extension === 'js' || extension === 'html' || extension === 'ico') {
     handlers.servePublic(request, response);
   } else if (url.indexOf('/api/words') !== -1) {
-    const splitUrl = url.replace('/api/words/?', '').split('&');
+    const splitUrl = url.replace('/api/words?', '').split('&');
 
     const dataHolder = {};
 
@@ -42,7 +42,7 @@ module.exports = function (request, response) {
     APIResponse.id = dataHolder.id;
     APIResponse.words = letterArr.slice(0, 10);
 
-    handlers.handleAPI(response, letterArr);
+    handlers.handleAPI(response, APIResponse);
   } else {
     handlers.pageNotFound(request, response);
   }
