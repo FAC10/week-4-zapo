@@ -1,3 +1,8 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #ff3543;
   color: #fffae3;
@@ -16,11 +21,12 @@ body {
 }
 
 input {
-    display: inline-block;
-    margin: 1rem;
+    width: 100%;
+    margin: 1rem 0;
     padding: 1rem;
-    padding-right: 8rem;
+    /*padding-right: 8rem;*/
     font-size: 1rem;
+    flex: 1;
 }
 
 input:focus {
@@ -35,7 +41,11 @@ input:focus {
 
 label {
     min-width: 70px;
-    display: inline-block;
+    /*display: inline-block;*/
+    flex: 1 0 33%;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
 }
 
 #button {
@@ -58,10 +68,31 @@ button:hover {
   color: #ff3543;
 }
 
-@media screen and (max-width: 800px) {
-
 .input {
-  display: block;
+  padding: 0 1rem;
+  display: flex;
+  flex: 0 0 33%;
 }
 
+.input > label {
+  flex: 0 0 6em;
+  text-align: right;
+}
+
+/*@media screen and (max-width: 950px) {
+  .input {
+    flex-basis: 50%;
+  }
+}*/
+
+@media screen and (max-width: 1200px) {
+  .flex {
+    display: block;
+    margin: 0 auto;
+    max-width: 30rem;
+  }
+  .input {
+    display: block;
+    /*flex: 0 0 100%;*/
+  }
 }
