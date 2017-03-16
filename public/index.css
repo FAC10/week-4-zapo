@@ -92,10 +92,12 @@ button:hover {
 
 .result {
   font-size: 1.8rem;
+  line-height: 1.4;
   max-width: 50rem;
   margin: 0 auto;
   margin-top: 7rem;
   margin-bottom: 4rem;
+  padding: 1rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -106,5 +108,8 @@ button:hover {
   }
   .input {
     display: block;
+  }
+  .result {
+    font-size: 1.5rem;
   }
 }
