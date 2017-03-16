@@ -68,9 +68,7 @@ button {
   color: #fffae3;
   border: 1px solid #fffae3;
   margin: 0 auto;
-  display: block;
   margin-top: 2rem;
-  display: inline-block;
   -webkit-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
