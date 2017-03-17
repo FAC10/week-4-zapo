@@ -4,7 +4,7 @@ const path = require('path');
 const handlers = module.exports = {};
 
 handlers.serveLanding = function (request, response) {
-  fs.readFile(path.join(__dirname, '..', 'public', 'index.html'), (err, file) => {
+  fs.readFile(path.join(__dirname, '..', '..', 'public', 'index.html'), (err, file) => {
     if (err) return err;
     response.writeHead(200, 'Content-Type: text/html');
     response.end(file);
@@ -12,7 +12,7 @@ handlers.serveLanding = function (request, response) {
 };
 
 handlers.servePublic = function (request, response) {
-  fs.readFile(path.join(__dirname, '..', 'public', request.url), (err, file) => {
+  fs.readFile(path.join(__dirname, '..', '..', 'public', request.url), (err, file) => {
     if (err) return err;
     const extension = request.url.split('.')[1];
     const extensionType = {

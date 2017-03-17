@@ -1,4 +1,4 @@
-const handlers = require('../handlers/handler');
+const handlers = require('../handlers/handler.js');
 const handleAPI = require('../handlers/handleAPI.js');
 
 module.exports = function (request, response) {
