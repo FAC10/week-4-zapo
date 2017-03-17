@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const handleAPI = require('./handleAPI');
 
 const handlers = module.exports = {};
 
@@ -41,7 +42,7 @@ handlers.pageNotFound = function (request, response) {
 };
 
 
-handlers.serveAPI = function (response, api) {
+handlers.serveAPI = function (request, response) {
   response.writeHead(200, { 'content-type': 'application/json', 'access-control-allow-origin': '*' });
-  response.end(JSON.stringify(api));
+  response.end(JSON.stringify(handleAPI(request.url)));
 };
