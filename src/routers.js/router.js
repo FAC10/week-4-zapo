@@ -1,5 +1,5 @@
-const handlers = require('./handler');
-const handleAPI = require('./handleAPI.js');
+const handlers = require('../handlers/handler');
+const handleAPI = require('../handlers/handleAPI.js');
 
 module.exports = function (request, response) {
   const url = request.url;
