@@ -3,49 +3,58 @@
   box-sizing: border-box;
 }
 
+input, label, button {
+  font-size: inherit;
+  color: inherit;
+  border: none;
+}
+
 body {
-  background-color: #ff3543;
+  background-color: #f02e3b;
   color: #fffae3;
-  font-family: Lato;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
 }
 
 #title {
-  font-family: Fjalla One;
+  margin: 0;
+  margin-top: 3.5rem;
+  font-family: 'Fjalla One', Helvetica, Arial, sans-serif;
   font-size: 3rem;
   letter-spacing: 0.8rem;
   text-align: center;
 }
 
 #app {
+  margin: 0 auto;
   margin-top: 3.5rem;
+  max-width: 90rem;
 }
 
 input {
-    width: 100%;
-    margin: 1rem 0;
-    padding: 1rem;
-    /*padding-right: 8rem;*/
-    font-size: 1rem;
-    flex: 1;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 1rem;
+  flex: 1;
+  color: #333;
 }
 
 input:focus {
-  outline:3px solid #5dbcff;
+  outline: 3px solid #5dbcff;
 }
 
 .flex {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  font-size: 1.125rem;
 }
 
 label {
-    min-width: 70px;
-    /*display: inline-block;*/
-    flex: 1 0 33%;
-    display: flex;
-    -ms-align-items: center;
-    align-items: center;
+  min-width: 70px;
+  flex: 1 0 33%;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
 }
 
 #button {
@@ -54,20 +63,20 @@ label {
 }
 
 button {
-    padding: 1rem;
-    background-color: #ff3543;
-    color: #fffae3;
-    border: 1px solid #fffae3;
-    font-size: 1rem;
-    margin: 0 auto;
-    display: block;
-    margin-top: 2rem;
-    display: inline-block;
+  padding: 1rem;
+  background-color: #f02e3b;
+  color: #fffae3;
+  border: 1px solid #fffae3;
+  margin: 0 auto;
+  margin-top: 2rem;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 button:hover {
   background-color: #fffae3;
-  color: #ff3543;
+  color: #f02e3b;
 }
 
 .input {
@@ -76,17 +85,19 @@ button:hover {
   flex: 0 0 33%;
 }
 
-.input > label {
+.input>label {
   flex: 0 0 6em;
   text-align: right;
 }
 
 .result {
-    font-size: 1.8rem;
-    max-width: 50rem;
-    margin: 0 auto;
-    margin-top: 7rem;
-    margin-bottom: 4rem;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  max-width: 50rem;
+  margin: 0 auto;
+  margin-top: 7rem;
+  margin-bottom: 4rem;
+  padding: 1rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -97,6 +108,8 @@ button:hover {
   }
   .input {
     display: block;
-    /*flex: 0 0 100%;*/
+  }
+  .result {
+    font-size: 1.5rem;
   }
 }
