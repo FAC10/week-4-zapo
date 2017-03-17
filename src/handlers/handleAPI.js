@@ -1,7 +1,7 @@
-const noun = require('./words/nouns.json');
-const verb = require('./words/verbs.json');
-const adjective = require('./words/adjectives.json');
-const adverb = require('./words/adverbs.json');
+const noun = require('../words/nouns.json');
+const verb = require('../words/verbs.json');
+const adjective = require('../words/adjectives.json');
+const adverb = require('../words/adverbs.json');
 
 const jsonHolder = {
   noun,

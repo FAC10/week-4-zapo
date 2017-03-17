@@ -1,9 +1,9 @@
 const test = require('tape');
-const handleAPI = require('../src/handleAPI.js');
-const noun = require('../src/words/nouns.json');
-const verb = require('../src/words/verbs.json');
-const adjective = require('../src/words/adjectives.json');
-const adverb = require('../src/words/adverbs.json');
+const handleAPI = require('../../src/handleAPI.js');
+const noun = require('../../src/words/nouns.json');
+const verb = require('../../src/words/verbs.json');
+const adjective = require('../../src/words/adjectives.json');
+const adverb = require('../../src/words/adverbs.json');
 
 const jsonHolder = {
   noun,

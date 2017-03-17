@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+// this file is only run a couple of times during the set up of the project to make the .txt files we got from the web into alphabetized .JSON files. After the initial set up it has no connection to our app.
+
 let words = {};
 // Loop through character codes from a-z and create a key in our word
 // object for each one with an empty array ready for us to populate
