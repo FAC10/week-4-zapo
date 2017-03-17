@@ -1,5 +1,5 @@
 const test = require('tape');
-const handleAPI = require('../../src/handleAPI.js');
+const handleAPI = require('../../src/handlers/handleAPI.js');
 const noun = require('../../src/words/nouns.json');
 const verb = require('../../src/words/verbs.json');
 const adjective = require('../../src/words/adjectives.json');
@@ -11,8 +11,6 @@ const jsonHolder = {
   adjective,
   adverb,
 };
-
-// console.log(handleAPI);
 
 
 test('handleAPI control test', (t) => {
