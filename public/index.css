@@ -15,13 +15,16 @@ body {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
 }
 
+header {
+  text-align: center;
+}
+
 #title {
   margin: 0;
   margin-top: 3.5rem;
   font-family: 'Fjalla One', Helvetica, Arial, sans-serif;
   font-size: 3rem;
   letter-spacing: 0.8rem;
-  text-align: center;
 }
 
 #app {
@@ -55,7 +58,7 @@ label {
   justify-content: flex-end;
   -ms-align-items: center;
   align-items: center;
-  flex: 0 0 4.5rem;
+  flex: 0 0 5rem;
 
 }
 
