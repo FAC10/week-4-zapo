@@ -1,11 +1,15 @@
 const fs = require('fs');
 const path = require('path');
 
-const handlers = module.exports = {};
+const handlers = {};
 
 handlers.serveLanding = function (request, response) {
   fs.readFile(path.join(__dirname, '..', 'public', 'index.html'), (err, file) => {
-    if (err) return err;
+    if (err) {
+      response.writeHead(500, 'Content-Type: text/plain');
+      response.write(`<h1>Server Error</h1><h2>${err}</h2>`);
+      response.end();
+    }
     response.writeHead(200, 'Content-Type: text/html');
     response.end(file);
   });
@@ -13,7 +17,11 @@ handlers.serveLanding = function (request, response) {
 
 handlers.servePublic = function (request, response) {
   fs.readFile(path.join(__dirname, '..', 'public', request.url), (err, file) => {
-    if (err) return err;
+    if (err) {
+      response.writeHead(500, 'Content-Type: text/plain');
+      response.write(`<h1>Server Error</h1><h2>${err}</h2>`);
+      response.end();
+    }
     const extension = request.url.split('.')[1];
     const extensionType = {
       html: 'text/html',
@@ -37,3 +45,5 @@ handlers.serveAPI = function (response, api) {
   response.writeHead(200, { 'content-type': 'application/json', 'access-control-allow-origin': '*' });
   response.end(JSON.stringify(api));
 };
+
+module.exports = handlers;
