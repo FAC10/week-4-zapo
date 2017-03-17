@@ -28,7 +28,7 @@ As a student who is learning the differences between nouns, adjectives, verbs an
 
 
 ## Architecture
-![Archiecture image](assets/architecture.png)
+![Archiecture image](https://cloud.githubusercontent.com/assets/21139983/24043359/32f9055e-0b0e-11e7-8978-f27b450fa5d4.png)
 
 
 ## Stretch goals
