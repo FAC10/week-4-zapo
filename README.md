@@ -19,7 +19,7 @@ As a student who is learning the differences between nouns, adjectives, verbs an
 - [x] When I start typing each of my madlib words, I want to see at least a few suggestions for words I can pick.
 - [x] I only want to see nouns, verbs, adverbs or adjectives, depending on what the mad lib is asking for.
 - [x] I want to be able to input my own word if I don't like the suggested ones.
-- [ ] I want to be notified if I've been extra lazy and missed out an input or two.
+- [x] I want to be notified if I've been extra lazy and missed out an input or two.
 - [x] I want the suggestions to change dynamically if I add or delete characters.
 - [x] I want the story to be hidden until I submit the words so the game isn't ruined.
 - [x] When I submit, I no longer want to see the input fields so the page is nice and clear.
